@@ -33,7 +33,7 @@ export default {
       // console.log(uuid.value,type.value)
       const lm = await navigator.mediaDevices.getUserMedia({
         video: true,
-        audio: false,
+        audio: true,
       });
       const localStream = lm;
       let remoteStream = new MediaStream();

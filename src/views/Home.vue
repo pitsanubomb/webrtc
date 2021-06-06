@@ -81,7 +81,7 @@ export default {
       setMedia();
     });
     const setMedia = async () => {
-      const m = await openMediaDevices({ video: true, audio: false });
+      const m = await openMediaDevices({ video: true, audio: true });
       console.log(`Get medai form device . . .`);
       if (m) {
         genRoom()
