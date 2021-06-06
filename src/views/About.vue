@@ -4,6 +4,9 @@
     <div class="absolute bottom-0 -right-0 w-1/4">
       <video id="localVideo" autoplay playsinline muted></video>
     </div>
+    <div v-if="!stream.isLived && type === `offer`" class="absolute bottom-2 left-2">
+      invite : {{shareLink}}
+    </div>
   </div>
 </template>
 <script>
@@ -19,7 +22,9 @@ export default {
       videoSrc: null,
       offer: null,
       answer: null,
+      isLived:false
     });
+    const shareLink = computed(() => `${window.location.origin}/m/${route.params.id}/user`)
     const uuid = computed(() => route.params.id);
     const type = computed(() => route.params.type);
     // const autoData = getAutoUpdate(uuid.value);
@@ -92,6 +97,7 @@ export default {
                       if (change.type === "added") {
                         let data = change.doc.data();
                         stream.pc.addIceCandidate(new RTCIceCandidate(data));
+                        stream.isLived = true;
                       }
                     });
                   });
@@ -189,6 +195,7 @@ export default {
         console.log(stream.pc);
       } catch (error) {}
     };
+  return {shareLink,stream,type}
   },
 };
 </script>
