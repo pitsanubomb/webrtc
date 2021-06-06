@@ -17,6 +17,7 @@
             class="object-contain w-full h-full"
             id="demoVideo"
             autoplay
+            muted
             playsinline
           ></video>
         </div>

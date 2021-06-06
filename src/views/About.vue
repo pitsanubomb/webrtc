@@ -2,7 +2,7 @@
   <div class="bg-gray-50 relative w-full">
     <video class="object-cover w-screen h-screen" id="remoteVideo" autoplay playsinline></video>
     <div class="absolute bottom-0 -right-0 w-1/4">
-      <video id="localVideo" autoplay playsinline></video>
+      <video id="localVideo" autoplay playsinline muted></video>
     </div>
   </div>
 </template>
