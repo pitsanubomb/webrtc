@@ -1,11 +1,19 @@
 <template>
   <div class="bg-gray-50 relative w-full">
-    <video class="object-cover w-screen h-screen" id="remoteVideo" autoplay playsinline></video>
+    <video
+      class="object-cover w-screen h-screen"
+      id="remoteVideo"
+      autoplay
+      playsinline
+    ></video>
     <div class="absolute bottom-0 -right-0 w-1/4">
       <video id="localVideo" autoplay playsinline muted></video>
     </div>
-    <div v-if="!stream.isLived && type === `offer`" class="absolute bottom-2 left-2">
-      invite : {{shareLink}}
+    <div
+      v-if="!stream.isLived && type === `offer`"
+      class="absolute bottom-2 left-2"
+    >
+      invite : {{ shareLink }}
     </div>
   </div>
 </template>
@@ -22,9 +30,11 @@ export default {
       videoSrc: null,
       offer: null,
       answer: null,
-      isLived:false
+      isLived: false,
     });
-    const shareLink = computed(() => `${window.location.origin}/m/${route.params.id}/user`)
+    const shareLink = computed(
+      () => `${window.location.origin}/m/${route.params.id}/user`
+    );
     const uuid = computed(() => route.params.id);
     const type = computed(() => route.params.type);
     // const autoData = getAutoUpdate(uuid.value);
@@ -41,11 +51,11 @@ export default {
         audio: true,
       });
       const localStream = lm;
-      let remoteStream = new MediaStream();
+      // let remoteStream = new MediaStream();
       if (lm) {
         stream.videoSrc = lm;
         document.getElementById(`localVideo`).srcObject = stream.videoSrc;
-        document.getElementById(`remoteVideo`).srcObject = remoteStream;
+        // document.getElementById(`remoteVideo`).srcObject = remoteStream;
         // Create Peer
         createPeer();
         localStream.getTracks().forEach((element) => {
@@ -56,10 +66,12 @@ export default {
 
         stream.pc.addEventListener("track", (event) => {
           console.log(`Get remote ${event.streams[0]}`);
-          event.streams[0].getTracks().forEach((track) => {
-            console.log("Add a track to the remoteStream:", track);
-            remoteStream.addTrack(track);
-          });
+          // event.streams[0].getTracks().forEach((track) => {
+          //   console.log("Add a track to the remoteStream:", track);
+          //   remoteStream.addTrack(track);
+          // });
+          document.querySelector("#remoteVideo").srcObject = event.streams[0];
+          console.log(event.streams[0]);
         });
         if (type.value === `offer` && stream.offer === null) {
           console.log(`Set offer . . .`);
@@ -195,7 +207,7 @@ export default {
         console.log(stream.pc);
       } catch (error) {}
     };
-  return {shareLink,stream,type}
+    return { shareLink, stream, type };
   },
 };
 </script>
