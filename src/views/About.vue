@@ -6,7 +6,7 @@
       autoplay
       playsinline
     ></video>
-    <div class="absolute bottom-0 -right-0 w-1/4">
+    <div class="absolute m-3 bottom-1 -right-0 w-1/4 border-white border-solid border-2">
       <video id="localVideo" autoplay playsinline muted></video>
     </div>
     <div
