@@ -429,10 +429,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-15.12.0.tgz#6a459d261450a300e6865faeddb5af01c3389bb3"
   integrity sha512-+aHJvoCsVhO2ZCuT4o5JtcPrCPyDE3+1nvbDprYes+pPkEsbjH7AGUCNtjMOXS0fqH14t+B7yLzaqSz92FPWyw==
 
-"@types/tailwindcss@^2.0.4":
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/@types/tailwindcss/-/tailwindcss-2.0.5.tgz#25cbab7861049f046c13868ad3cd1ed8c09ff7c5"
-  integrity sha512-njEtRtBGkY1pGalpV2hoT6nOgb+GNir7AaNIjCJlpnEYKAChIOn9QoN1sLE3A/67fD5R5jf3bdGW+3m5qCGCkQ==
+"@types/tailwindcss@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@types/tailwindcss/-/tailwindcss-3.0.0.tgz#2f0daf9a5788d3bc9a83e5fbcab76206e130ae27"
+  integrity sha512-322KvIsPYb5ryo+I60WN2Os7uBkdkc6G6n1SGcQZJAma6bygaOkEFJVWX8yy8wKo5yhnsOHb7L4LyBrcRnN29Q==
 
 "@vitejs/plugin-vue@^1.2.3":
   version "1.2.3"
