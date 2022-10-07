@@ -8,7 +8,7 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "@firebase/firestore": "^2.3.4",
+    "@firebase/firestore": "^3.6.0",
     "firebase": "^8.6.4",
     "vue": "^3.0.11",
     "vue-router": "^4.0.8"
